@@ -1,0 +1,291 @@
+{% load static i18n front_tags %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>{% block title %}{{ config.company_name }} | Homepage {% endblock title %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <meta name="description" content="{{ content_description }}">
+  <meta name="author" content="PalaceWebDev">
+
+  {#  <!-- Bootstrap v4.3.1 CSS via CDN -->#}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  {#  <!-- Theme style -->#}
+  <link href="{% static '/css/theme-style.min.css' %}" rel="stylesheet">
+  {#  <!-- Colour scheme -->#}
+  <link href="{% static '/css/colour-slate.min.css' %}" rel="stylesheet">
+  {% block css %}{% endblock %}
+  {#  <!-- Iconset: Font Awesome 5.0.13 via CDN -->#}
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">
+  {#  <!-- Iconset: ionicons - http://ionicons.com/ -->#}
+  <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <!-- Iconset: Linearicons - https://linearicons.com/free -->
+  <link href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css" rel="stylesheet">
+  <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+  {#  <!-- Fav and touch icons -->#}
+  <link rel="apple-touch-icon" sizes="180x180" href="{% static '/images/apple-touch-icon.png' %}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static '/images/favicons/apple-touch-icon.png' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static '/images/favicons/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static '/images/favicons/favicon-16x16.png' %}">
+  <link rel="manifest" href="{% static '/images/favicons/site.webmanifest' %}">
+  <link rel="mask-icon" href="{% static '/images/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  {#  <!-- Google fonts -->#}
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Rambla:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  {#  <!--Plugin: Retina.js (high def image replacement) - @see: http://retinajs.com/-->#}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/retina.js/1.3.0/retina.min.js"></script>
+
+  {% ga_analytics config.ga_analytics %}
+
+</head>
+
+
+<!-- ======== @Region: body ======== -->
+<body class="page page-index navbar-layout-default">
+
+<a id="#top" href="#content" class="sr-only">Skip to content</a>
+
+<!-- ======== @Region: #header ======== -->
+<div id="header">
+
+  {% block header_upper_region %}
+    <!--Header upper region-->
+    <div class="header-upper">
+      <div class="header-inner container">
+        <!--user menu-->
+        <div class="header-block-flex order-1 mr-auto">
+          <nav class="nav nav-sm header-block-flex">
+            {% if request.user.is_staff %}<a class="nav-link btn btn-sm btn-info" href="{% url "pwd_front_admin:site-admin" %}">Site admin</a>{% endif %}
+            {#          {% if request.user.is_authenticated %}#}
+            {# URL provided by django-allauth/account/urls.py #}
+            {#            <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>#}
+            {# URL provided by django-allauth/account/urls.py #}
+            {#            <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>#}
+            {#          {% else %}#}
+            {#            <a class="nav-link d-md-none" href="login.html"><i class="fa fa-user"></i></a>#}
+            {# URL provided by django-allauth/account/urls.py #}
+            {#            <a  id="sign-up-link" class="nav-link text-xs text-uppercase d-none d-md-block" href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a>#}
+            {# URL provided by django-allauth/account/urls.py #}
+            {#            <a id="log-in-link" class="nav-link text-xs text-uppercase d-none d-md-block" href="{% url 'account_login' %}">{% trans "Sign In" %}</a>#}
+            {#          {% endif %}#}
+
+          </nav>
+        </div>
+        {#      <!--social media icons-->#}
+        <div class="nav nav-icons header-block order-12">
+          <!--@todo: replace with company social media details-->
+          <a href="https://www.facebook.com/{{ config.facebook_link }}" class="nav-link"> <i class="fab fa-facebook-square icon-1x"></i> <span class="sr-only">Facebook</span> </a>
+          <a href="https://www.linkedin.com/in/{{ config.linkedin_link }}" class="nav-link"> <i class="fab fa-linkedin icon-1x"></i> <span class="sr-only">Linkedin</span> </a>
+        </div>
+      </div>
+    </div>
+  {% endblock header_upper_region %}
+
+  {#  <!--Header & Branding region-->#}
+  <div class="header" data-toggle="sticky">
+    <div class="header-inner container">
+      {#      <!-- branding/logo -->#}
+      <div class="header-brand">
+        <a class="header-brand-text" href="/" title="Home">
+          <h1 class="h2">
+            {# Warning: missing </span> comes with the filter headify #}
+            <span class="header-brand-text-alt">{{ config.company_name | headify }}<span class="header-brand-text-alt">.COM</span>
+          </h1>
+        </a>
+        {# Vertical line - hidden when small screen #}
+        <div class="header-divider d-none d-lg-block"></div>
+        <div class="header-slogan d-none d-lg-block">{% trans "Services" %}</div>
+      </div>
+
+      {# <!-- Hamburger button -->#}
+      <div class="header-block order-12">
+        <a href="#top" class="btn btn-link btn-icon header-btn float-right d-lg-none js-offcanvas-trigger js-offcanvas-trigger-1553612169650 c-button order-last"
+           data-toggle="off-canvas" data-target=".navbar-main" data-settings="{&quot;cloneTarget&quot;:true, &quot;targetClassExtras&quot;: &quot;navbar-offcanvas&quot;}"
+           role="button" aria-controls="js-offcanvas-target-1553612169650-clone" aria-expanded="false"><span class="c-button__text"> <i class="fa fa-bars"></i> </span></a>
+      </div>
+
+      <div class="navbar navbar-expand-md navbar-static-top">
+        <!--everything within this div is collapsed on mobile-->
+        <div class="navbar-main collapse">
+          <!--main navigation-->
+          <ul class="nav navbar-nav navbar-nav-stretch float-lg-right dropdown-effect-fade">
+
+            <!-- Homepage -->
+            <li class="nav-item">
+              <a href="{% url 'pwd_front:home' %}" class="nav-link animated">
+                <i class="fa fa-home nav-link-icon"></i> <span class="d-none">{{ home }}</span> </a>
+            </li>
+
+            <!-- Services -->
+            <li class="nav-item dropdown">
+              <a href="{% url 'pwd_front:services' %}" class="nav-link dropdown-toggle animated dropdown" id="pages-drop" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">Services</a>
+              <!-- Menu -->
+              <div class="dropdown-menu">
+                <a href="{% url 'pwd_front:services' %}" class="dropdown-item">Example</a>
+                <a href="{% url 'pwd_front:services' %}" class="dropdown-item">Example 2</a>
+                <a href="{% url 'pwd_front:services' %}" class="dropdown-item">Example 3</a>
+              </div>
+            </li>
+
+            <!-- Process -->
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle animated dropdown" id="elements-drop" data-toggle="dropdown" data-hover="dropdown" aria-expanded="false">Process</a>
+              <div class="dropdown-menu">
+                <a href="{% url 'pwd_front:process' %}" class="dropdown-item">Plateforme</a>
+                <a href="{% url 'pwd_front:process' %}" class="dropdown-item">Sécurité</a>
+                <a href="{% url 'pwd_front:process' %}" class="dropdown-item">Développement permanent</a>
+              </div>
+            </li>
+
+            <!-- About Us -->
+            <li class="nav-item">
+              <a href="{% url 'pwd_front:about' %}" class="nav-link animated">{% trans "About Us" %}</a>
+            </li>
+          </ul>
+        </div>
+        <!--/.navbar-collapse -->
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ======== @Region: #highlighted ======== -->
+<div id="highlight ">
+
+  {% if messages %}
+    {% for message in messages %}
+      <div id='messages' class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+        <div class="container">
+          {{ message }}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  {% block content %}
+  {% endblock content %}
+
+</div>
+
+{% block quote_placeholder %}
+  <!-- ======== @Region: #content-below ======== -->
+  <div id="content-below">
+    <!-- Awesome features call to action -->
+    <div class="bg-primary bg-op-9 text-white py-4">
+      <div class="container">
+        <div class="row text-center text-lg-left align-items-lg-center">
+          <div class="col-12 col-lg-7 text-white">
+            <h3 class="font-weight-bold my-0 text-uppercase">
+              {% trans "Ask for a quote" %}
+            </h3>
+            <p class="font-weight-normal op-9 my-0">
+              {# Translator: Réactivité à tout crin - Qualité garantie - Écriture et relecture humaines #}
+              <i class="ion-android-checkmark-circle"></i> {% trans "Great responsiveness" %}
+              <i class="ion-android-checkmark-circle ml-lg-3"></i> {% trans "Guaranteed quality" %}
+              <i class="ion-android-checkmark-circle ml-lg-3"></i> {% trans "Carefull rereading by real people!" %}
+          </div>
+          <div class="col-12 col-lg-5 py-2 text-lg-right">
+            <a href="{% url 'pwd_front:quote-request' %}" class="btn btn-xlg btn-white btn-rounded shadow-lg bg-light bg-op-8 bg-hover-white">{% trans "I want a quote" %}<i class="fa fa-arrow-right ml-2 mt-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock quote_placeholder %}
+
+
+<!-- ======== @Region: #footer ======== -->
+<footer id="footer" class="p-0">
+  <div class="container pt-6 pb-5">
+    <div class="row">
+      <div class="col-md-4">
+        <!--@todo: replace with company contact details-->
+        <h4 class="text-uppercase text-white">{% trans "Contact Us" %}</h4>
+        <address>
+          <ul class="list-unstyled">
+            <li>
+              <abbr title="Phone"><i class="fa fa-phone fa-fw"></i></abbr>
+              {{ config.phone_number }}
+            </li>
+            <li>
+              <abbr title="Email"><i class="fa fa-envelope fa-fw"></i></abbr>
+              {{ config.email }}
+            </li>
+            <li>
+              <abbr title="Address"><i class="fa fa-home fa-fw"></i></abbr>
+              {{ config.address }}
+            </li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="col-md-4">
+        <h4 class="text-uppercase text-white">{% trans "About Us" %}</h4>
+        <p>Dignissim tincidunt mattis lorem, sagittis nisi, amet ut pulvinar lectus cursus ac! Enim turpis odio dis. Non ut vel, nisi dapibus?...</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4 class="text-uppercase text-white">
+          Dignissim
+        </h4>
+        <p>Dignissim tincidunt mattis lorem, sagittis nisi, amet ut pulvinar lectus cursus ac! Enim turpis odio dis. Non ut vel, nisi dapibus?...</p>
+        <!--@todo: replace with mailchimp code-->
+        <form>
+          <div class="input-group">
+            <label class="sr-only" for="email-field">Email</label>
+            <input type="text" class="form-control" id="email-field" placeholder="Email">
+            <span class="input-group-append">
+                  <button class="btn btn-primary" type="button">Go!</button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-0 hr-blank op-2" />
+  <div class="bg-inverse-dark text-sm py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          {# Translators: Site propulsé par #}
+          <p class="mb-0">{% trans "Site provided by" %} <a href="https://palaceweb.fr" class="footer-link">PalaceWebDev</a> | Copyright 2019 &copy; RD-Transcription</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-inline footer-links float-md-right mb-0">
+            {# Translators: Mentions légales, Confidentialité, Contact #}
+            <li class="list-inline-item"><a href="{% url "pwd_front:terms" %}">{% trans "Terms" %}</a></li>
+            <li class="list-inline-item"><a href="{% url "pwd_front:privacy" %}">{% trans "Privacy" %}</a></li>
+            <li class="list-inline-item"><a href="{% url "pwd_front:quote-request" %}">{% trans "Contact Us" %}</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#top" class="btn btn-icon btn-dark pos-fixed pos-b pos-r mr-3 mb-3 scroll-state-hidden" title="Back to top" data-scroll="scroll-state"><i class="fa fa-chevron-up"></i></a>
+    </div>
+  </div>
+</footer>
+
+{% block modal %}{% endblock modal %}
+
+<!--jQuery 3.2.1 via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Popper 1.9.3 via CDN, needed for Bootstrap Tooltips & Popovers -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.9.3/umd/popper.min.js"></script>
+<!-- Bootstrap v4.0.0-beta JS via CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+<script src="{% static '/js/script.min.js' %}"></script>
+<script src="{% static '/js/pwd_front.js' %}"></script>
+
+{% block javascript %}{% endblock javascript %}
+
+</body>
+</html>

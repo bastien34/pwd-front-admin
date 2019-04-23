@@ -1,0 +1,6 @@
+django-crispy-forms==1.7.2
+sorl-thumbnail==12.5.0
+django-ckeditor==5.6.1
+
+# django-pwd-pwd_front
+-e git+ssh://git@github.com/bastien34/django-pwd-front.git@master#egg=pwd_front

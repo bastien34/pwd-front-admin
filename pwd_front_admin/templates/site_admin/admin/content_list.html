@@ -1,0 +1,57 @@
+{% extends "./base.html" %}
+{% load static i18n %}
+
+{% block title %}{{ page_title }}{% endblock title %}
+
+{% block admin_content %}
+  <div class="container">
+
+    <!-- Menu -->
+    <div class="d-flex">
+      <div class="py-2">
+        <h2>{% trans "Contents" %}</h2>
+      </div>
+      <div class="ml-auto py-2">
+        <a class="btn btn-sm btn-primary text-white" href="{% url "pwd_front_admin:content-create" %}"><i class="fa fa-plus-circle"></i>
+          {% trans "add a new content" %}</a>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>{% trans "Title" %}</th>
+        <th>{% trans "Contents" %}</th>
+        <th>{% trans "Active" %}</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {% for content in object_list %}
+        <tr>
+          <td data-url="{% url "pwd_front_admin:content-update" pk=content.pk %}">
+            {{ content.name }}
+          </td>
+          <td data-url="{% url "pwd_front_admin:content-update" pk=content.pk %}">{{ content.content | truncatewords_html:30 }}</td>
+          <td>
+            <div class="form-check">
+              <form action="{% url "pwd_front_admin:content-update" pk=content.pk %}" method="post" id="check-{{ slide.pk }}">
+                {% csrf_token %}
+                <input class="form-check-input position-static"{% if content.is_active %} checked{% endif %}
+                       type="checkbox" id="{{ slide.pk }}" name="is_active" aria-label="...">
+              </form>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock admin_content %}
+
+{% block javascript %}
+  <script src="{% static "/js/js.cookie.js" %}"></script>
+  <script src="{% static "/js/pwd_form.js" %}"></script>
+{% endblock javascript %}
+

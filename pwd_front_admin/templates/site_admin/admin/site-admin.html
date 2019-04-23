@@ -1,0 +1,14 @@
+{% extends "./base.html" %}
+{% load static i18n %}
+
+
+{% block admin_content %}
+  <div class="container">
+  <h2>{% trans "Welcome to admin pages!" %}</h2>
+    {% blocktrans %}
+      <p>Setup here your website.</p>
+      <p>Help yourself with Linear Awesome icon.</p>
+  {% endblocktrans %}
+  </div>
+
+{% endblock admin_content %}

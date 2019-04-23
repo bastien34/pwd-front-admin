@@ -1,0 +1,30 @@
+{% extends "./base.html" %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ page_name }}{% endblock title %}
+
+{% block admin_content %}
+
+  <div class="container">
+
+    <!-- Menu -->
+    <h2>{{ page_name }}</h2>
+
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form|crispy }}
+    {% if delete_url %}
+      <a class="btn btn-lg btn-red text-white" href="{{ delete_url }}"><i class="fa fa-trash-alt"> </i>
+        {% trans "Delete" %}</a>
+    {% endif %}
+      <input type="submit" class="btn btn-success btn-lg" value="Submit">
+    </form>
+  </div>
+{% endblock admin_content %}
+
+{% block javascript %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+  <script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+{% endblock %}

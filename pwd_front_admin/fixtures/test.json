@@ -1,0 +1,131 @@
+[
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$150000$ZBjdWPpm2IMp$XkCnOBH8xcQ0i3TyTs0q/Y5PUg1PMtbt0thYdubp2ZA=",
+      "last_login": "2019-04-08T09:03:27.224Z",
+      "is_superuser": true,
+      "username": "test",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2019-04-08T09:02:07.101Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "pwd_front.blurb",
+    "pk": 1,
+    "fields": {
+      "la_icon": "anchor",
+      "title": "Do you like Anchor?",
+      "description": "At PalaceWebDev, we love anchoring stuff. and we'd love to share our passion with you. Asap!",
+      "is_active": true
+    }
+  },
+  {
+    "model": "pwd_front.page",
+    "pk": 1,
+    "fields": {
+      "slug": "homepage",
+      "title": "Homepage",
+      "description": "This the description of the page.",
+      "keywords": "homepage test newpage",
+      "paragraphs": [],
+      "blurbs": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "pwd_front.page",
+    "pk": 2,
+    "fields": {
+      "slug": "terms",
+      "title": "Terms",
+      "description": null,
+      "keywords": null,
+      "paragraphs": [],
+      "blurbs": []
+    }
+  },
+  {
+    "model": "pwd_front.page",
+    "pk": 3,
+    "fields": {
+      "slug": "services",
+      "title": "Services",
+      "description": null,
+      "keywords": null,
+      "paragraphs": [],
+      "blurbs": []
+    }
+  },
+  {
+    "model": "pwd_front.page",
+    "pk": 4,
+    "fields": {
+      "slug": "process",
+      "title": "Process",
+      "description": null,
+      "keywords": null,
+      "paragraphs": [],
+      "blurbs": []
+    }
+  },
+  {
+    "model": "pwd_front.page",
+    "pk": 5,
+    "fields": {
+      "slug": "privacy",
+      "title": "Privacy",
+      "description": null,
+      "keywords": null,
+      "paragraphs": [],
+      "blurbs": []
+    }
+  },
+  {
+    "model": "pwd_front.page",
+    "pk": 6,
+    "fields": {
+      "slug": "contact-us",
+      "title": "Contact Us",
+      "description": null,
+      "keywords": null,
+      "paragraphs": [],
+      "blurbs": []
+    }
+  },
+  {
+    "model": "pwd_front.slider",
+    "pk": 1,
+    "fields": {
+      "image": "uploads/slides/montpellier-comedie.jpg",
+      "title": "My first slide",
+      "content": "Always moving to see what's going on",
+      "position": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "pwd_front.sitesettings",
+    "pk": 1,
+    "fields": {
+      "site_name": "website.com",
+      "description": null,
+      "company_name": "company",
+      "address": "34 paradise street\r\nChicago P8798",
+      "phone_number": "+1 239 09 99\u00a099 99",
+      "fax_number": "+1 239 09 99\u00a099 92",
+      "email": "one-email@provider.com",
+      "ga_analytics": "8989879FC8",
+      "facebook_link": "my_facebook",
+      "linkedin_link": "my_linkedin"
+    }
+  }
+]

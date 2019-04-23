@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block header_upper_region %}{% endblock header_upper_region %}
+
+{% block content %}
+  <div class="container">
+    <ul class="nav nav-tabs">
+
+      <!-- Admin homepage -->
+      <li class="nav-item">
+        <a href="{% url 'pwd_front_admin:site-admin' %}" class="nav-link animated">
+          <i class="fa fa-home nav-link-icon"></i></span> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link{% if menu_pref %} active{% endif %}" href="{% url "pwd_front_admin:preferences-update" pk=1 %}">{% trans "Site settings" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link{% if menu_slider %} active{% endif %}" href="{% url "pwd_front_admin:slider-list" %}">{% trans "Slider" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link{% if menu_blurb %} active{% endif %}" href="{% url "pwd_front_admin:blurb-list" %}">{% trans "Blurbs" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link{% if menu_page %} active{% endif %}" href="{% url "pwd_front_admin:page-list" %}">{% trans "Pages" %}</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link{% if content_menu %} active{% endif %}" href="{% url "pwd_front_admin:content-list" %}">{% trans "Contents" %}</a>
+      </li>
+    </ul>
+
+    <div class="row py-4">
+      {% block admin_content %}{% endblock admin_content %}
+    </div>
+
+  </div>
+{% endblock content %}
+
+{% block quote_placeholder %}{% endblock quote_placeholder %}
+

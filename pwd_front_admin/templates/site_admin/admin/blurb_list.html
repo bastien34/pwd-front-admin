@@ -1,0 +1,50 @@
+{% extends "./base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Blurb" %}{% endblock title %}
+
+{% block admin_content %}
+  <div class="container">
+
+    <!-- Menu -->
+    <div class="d-flex">
+      <div class="py-2">
+        <h2>Blurbs</h2>
+      </div>
+      <div class="ml-auto py-2">
+        <a class="btn btn-sm btn-primary text-white" href="{% url "pwd_front_admin:blurb-create" %}"><i class="fa fa-plus-circle"></i>
+          {% trans "add a new blurb" %}</a>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>LA Icon</th>
+        <th>{% trans "Content" %}</th>
+        <th>{% trans "Active" %}</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {% for blurb in object_list %}
+        <tr data-url="{% url "pwd_front_admin:blurb-update" pk=blurb.pk %}">
+          <td><i class="la la-{{ blurb.la_icon }} icon-3x text-primary"></i></td>
+          <td>
+            <strong>{{ blurb.title }}</strong></br>{{ blurb.description }}
+          </td>
+          <td>{{ blurb.is_active }}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+{% endblock admin_content %}
+
+{% block javascript %}
+  <script src="{% static "/js/js.cookie.js" %}"></script>
+  <script src="{% static "/js/pwd_form.js" %}"></script>
+{% endblock javascript %}
+

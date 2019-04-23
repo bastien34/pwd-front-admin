@@ -1,0 +1,354 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-04-13 09:20+0000\n"
+"PO-Revision-Date: 2019-04-13 11:21+0200\n"
+"Last-Translator: Bastien Roques <broques@hotmail.com>\n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 2.0.6\n"
+
+#: models.py:12
+msgid "name"
+msgstr "nom"
+
+#: models.py:13
+msgid "Unique identifier."
+msgstr "Identifiant unique."
+
+#: models.py:14
+msgid "content"
+msgstr "contenu"
+
+#: models.py:19
+msgid "paraghaph"
+msgstr "paragraphe"
+
+#: models.py:20
+msgid "paragraphs"
+msgstr "paragraphes"
+
+#: models.py:38
+msgid "Choose an icon from Line Awesome free lib. Search the web!"
+msgstr "Choisis une icone de la librairie Line Awesome. Fouille le Web!"
+
+#: models.py:60
+msgid "title"
+msgstr "titre"
+
+#: models.py:61
+msgid "Title for your page."
+msgstr "Titre de votre page."
+
+#: models.py:63 models.py:129
+msgid "description"
+msgstr "description"
+
+#: models.py:64
+msgid "Description for your page (used in meta tag."
+msgstr "Description de la page utilisée en SEO."
+
+#: models.py:66
+msgid "keywords"
+msgstr "mots-clés"
+
+#: models.py:67
+msgid "Keywords for SEO"
+msgstr "Mots-clé pour le référencement"
+
+#: models.py:72
+msgid "Blurbs looks better if they're multiple of 3."
+msgstr "Les Blurbs sont mieux par trois."
+
+#: models.py:75
+msgid "page"
+msgstr "page"
+
+#: models.py:76
+msgid "pages"
+msgstr "pages"
+
+#: models.py:88
+msgid "image"
+msgstr "image"
+
+#: models.py:92
+msgid "Optional, if provided link to a page."
+msgstr "Optionnel, dirige vers une page si fourni."
+
+#: models.py:126
+msgid "Website"
+msgstr "Site web"
+
+#: models.py:130
+msgid "Description of your website."
+msgstr "Description de votre site."
+
+#: models.py:133
+msgid "phone number"
+msgstr "numéro de téléphone"
+
+#: models.py:135
+msgid "fax_number"
+msgstr "numéro de fax"
+
+#: models.py:140
+msgid "Facebook link"
+msgstr "Lien Facebook"
+
+#: models.py:142
+msgid "LinkedIn link"
+msgstr "Lien LinkedIn"
+
+#: templates/base.html:103
+msgid "Services"
+msgstr "Services"
+
+#: templates/base.html:148 templates/base.html:231 templates/pwd_front/about.html:4
+msgid "About Us"
+msgstr "Qui sommes-nous?"
+
+#: templates/base.html:187
+msgid "Ask for a quote"
+msgstr "Demandez un devis"
+
+#: templates/base.html:191
+msgid "Great responsiveness"
+msgstr "Grande réactivité"
+
+#: templates/base.html:192
+msgid "Guaranteed quality"
+msgstr "Qualité garantie"
+
+#: templates/base.html:193
+msgid "Carefull rereading by real people!"
+msgstr "Relecture attentive par de vrais humains!"
+
+#: templates/base.html:196
+msgid "I want a quote"
+msgstr "Je veux un devis"
+
+#: templates/base.html:211 templates/base.html:267
+msgid "Contact Us"
+msgstr "Contact"
+
+#. Translators: Site propulsé par
+#: templates/base.html:260
+msgid "Site provided by"
+msgstr "Site propulsé par"
+
+#. Translators: Mentions légales, Confidentialité, Contact
+#: templates/base.html:265 templates/pwd_front/terms.html:4
+msgid "Terms"
+msgstr "Mentions légales"
+
+#: templates/base.html:266 templates/pwd_front/privacy.html:4
+msgid "Privacy"
+msgstr "Confidentialité"
+
+#: templates/pwd_front/admin/base.html:16
+msgid "Site settings"
+msgstr "Préférences du site"
+
+#: templates/pwd_front/admin/base.html:19 templates/pwd_front/admin/slider_list.html:4
+msgid "Slider"
+msgstr "Slider"
+
+#: templates/pwd_front/admin/base.html:22
+msgid "Blurbs"
+msgstr "Blurbs"
+
+#: templates/pwd_front/admin/base.html:25
+msgid "Pages"
+msgstr "Pages"
+
+#: templates/pwd_front/admin/base.html:28
+#: templates/pwd_front/admin/content_list.html:12
+#: templates/pwd_front/admin/content_list.html:25
+msgid "Contents"
+msgstr "Contenus"
+
+#: templates/front/admin/blurb_list.html:4
+#: templates/front/admin/page_list.html:4
+msgid "Blurb"
+msgstr "Blurb"
+
+#: templates/front/admin/blurb_list.html:16
+msgid "add a new blurb"
+msgstr "créer un Blurb"
+
+#: templates/front/admin/blurb_list.html:25
+#: templates/front/admin/slider_list.html:26
+msgid "Content"
+msgstr "Contenu"
+
+#: templates/front/admin/blurb_list.html:26
+#: templates/front/admin/content_list.html:26
+#: templates/front/admin/slider_list.html:27
+msgid "Active"
+msgstr "Actif"
+
+#: templates/front/admin/content_list.html:16
+#: templates/front/admin/page_list.html:16
+msgid "add a new content"
+msgstr "créer un contenu"
+
+#: templates/front/admin/content_list.html:24
+#: templates/front/admin/page_list.html:25
+msgid "Title"
+msgstr "Titre"
+
+#: templates/front/admin/form_page.html:19
+msgid "Delete"
+msgstr "Supprimer"
+
+#: templates/front/admin/object_confirm_delete.html:14
+msgid "Are you sure you want to delete"
+msgstr "Êtes-vous sûr de vouloir supprimer"
+
+#: templates/front/admin/page_list.html:26
+msgid "Description"
+msgstr "Description"
+
+#: templates/front/admin/site-admin.html:7
+msgid "Welcome to admin pages!"
+msgstr "Bienvenue dans les pages d'administration!"
+
+#: templates/front/admin/site-admin.html:8
+msgid ""
+"\n"
+"      <p>Setup here your website.</p>\n"
+"      <p>Help yourself with Linear Awesome icon.</p>\n"
+"  "
+msgstr ""
+"\n"
+"      <p>Configure ici votre site Web.</p>\n"
+"      <p>Sers-toi de la librairie Linear Awesome icon sur le Web pour plus "
+"de fun!</p>\n"
+"  "
+
+#: templates/front/admin/slider_list.html:16
+msgid "add a new slide"
+msgstr "créer un slide"
+
+#: templates/front/admin/slider_list.html:24
+msgid "Position"
+msgstr "Position"
+
+#: templates/front/admin/slider_list.html:25
+msgid "Image"
+msgstr "Image"
+
+#: templates/front/process.html:4
+msgid "Process"
+msgstr "Process"
+
+#: templates/front/quote-request.html:4
+msgid "Quote request"
+msgstr "Demande de devis"
+
+#: views.py:40
+msgid "Content list"
+msgstr "Contenus"
+
+#: views.py:58
+msgid "Site preferences"
+msgstr "Préférences du site"
+
+#: views.py:62
+msgid "Your settings have been updated."
+msgstr "Votre configuration a été mise à jour."
+
+#: views.py:67
+msgid "Check your form, something wrong just happened."
+msgstr "Vérifiez votre formulaire, quelque chose ne va pas."
+
+#: views.py:83
+msgid "Slider updated"
+msgstr "Slider mis à jour"
+
+#: views.py:84
+msgid "Slider update"
+msgstr "Mise à jour du Slider"
+
+#: views.py:101
+msgid "Blurb updated"
+msgstr "Blurb mis à jour"
+
+#: views.py:102
+msgid "Blurb update"
+msgstr "Mise à jour du Blurb"
+
+#: views.py:114
+msgid "Page updated"
+msgstr "Page mise à jour"
+
+#: views.py:115
+msgid "Page update"
+msgstr "Mise à jour de la page"
+
+#: views.py:123
+msgid "Content updated"
+msgstr "Contenu mis à jour"
+
+#: views.py:124
+msgid "Content update"
+msgstr "Mise à jour du contenu"
+
+#: views.py:143
+msgid "Slider created"
+msgstr "Slider créé"
+
+#: views.py:144
+msgid "New slide"
+msgstr "Nouveau slide"
+
+#: views.py:152
+msgid "Blurb created"
+msgstr "Blurb créé"
+
+#: views.py:153
+msgid "New blurb"
+msgstr "Nouveau blurb"
+
+#: views.py:161
+msgid "Content created"
+msgstr "Contenu créé"
+
+#: views.py:162
+msgid "New content"
+msgstr "Nouveau contenu"
+
+#: views.py:170
+msgid "Blurb deleted"
+msgstr "Blurb supprimé"
+
+#: views.py:172
+msgid "Delete a blurb?"
+msgstr "Supprimer un Blurb?"
+
+#: views.py:178
+msgid "Slider deleted"
+msgstr "Slider supprimé"
+
+#: views.py:180
+msgid "Delete a slider?"
+msgstr "Supprimer un slider?"
+
+#: views.py:187
+msgid "Content deleted"
+msgstr "Contenu supprimé"
+
+#: views.py:189
+msgid "Delete a content?"
+msgstr "Supprimer un contenu?"

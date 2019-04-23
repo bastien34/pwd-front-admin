@@ -1,0 +1,20 @@
+{% extends "./base.html" %}
+{% load static i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{{ page_name }}{% endblock title %}
+
+{% block admin_content %}
+
+  <div class="container">
+
+    <h2>{{ page_name }}</h2>
+
+    <form method="post">{% csrf_token %}
+      <p>{% trans "Are you sure you want to delete" %} "{{ object }}"?</p>
+      <input class="btn btn-primary" type="submit" value="Confirm">
+    </form>
+
+  </div>
+
+{% endblock admin_content %}

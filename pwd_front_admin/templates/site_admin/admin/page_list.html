@@ -1,0 +1,49 @@
+{% extends "./base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Blurb" %}{% endblock title %}
+
+{% block admin_content %}
+  <div class="container">
+
+    <!-- Menu -->
+    <div class="d-flex">
+      <div class="py-2">
+        <h2>Pages</h2>
+      </div>
+      <div class="ml-auto py-2">
+        <a class="btn btn-sm btn-primary text-white" href="{% url "pwd_front_admin:content-create" %}"><i class="fa fa-plus-circle"></i>
+          {% trans "add a new content" %}</a>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-hover">
+      <thead>
+      <tr>
+        <th>Slug</th>
+        <th>{% trans "Title" %}</th>
+        <th>{% trans "Description" %}</th>
+        <th>Blurbs</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {% for page in object_list %}
+        <tr>
+          <td data-url="{% url "pwd_front_admin:page-update" pk=page.pk %}">{{ page.slug }}</td>
+          <td data-url="{% url "pwd_front_admin:page-update" pk=page.pk %}">{{ page.title }}</td>
+          <td data-url="{% url "pwd_front_admin:page-update" pk=page.pk %}">{{ page.description }}</td>
+          <td>
+            {% for blurb in page.blurbs.all %}
+              <a href="{% url "pwd_front_admin:blurb-update" pk=blurb.pk %}">
+                <i class="la la-{{ blurb.la_icon }} icon-2x text-primary"></i>
+              </a>
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock admin_content %}
