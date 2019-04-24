@@ -1,6 +1,6 @@
-===============
-PWD Front Admin
-===============
+=============
+PWD Dashboard
+=============
 
 Django-front Admin is a simple Django app to administrate pages from ```Django-PWD-front```
 package.
