@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'sorl.thumbnail',
     'ckeditor',
     'django_extensions',
-    'pwd_front_admin',
+    'dashboard',
     'pwd_front',
 ]
 
@@ -122,7 +122,7 @@ USE_L10N = True
 USE_TZ = True
 
 LOCALE_PATHS = (
-    os.path.normpath(os.path.join(BASE_DIR, '../pwd_front_admin/locale/')),
+    os.path.normpath(os.path.join(BASE_DIR, '../dashboard/locale/')),
 )
 
 # Static files (CSS, JavaScript, Images)

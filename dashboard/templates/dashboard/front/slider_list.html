@@ -12,7 +12,7 @@
         <h2>Slider</h2>
       </div>
       <div class="ml-auto py-2">
-        <a class="btn btn-sm btn-primary text-white" href="{% url "pwd_front_admin:slider-create" %}"><i class="fa fa-plus-circle"></i>
+        <a class="btn btn-sm btn-primary text-white" href="{% url "dashboard:slider-create" %}"><i class="fa fa-plus-circle"></i>
           {% trans "add a new slide" %}</a>
       </div>
     </div>
@@ -31,18 +31,18 @@
       <tbody>
       {% for slide in object_list %}
         <tr>
-          <td data-url="{% url "pwd_front_admin:slider-update" pk=slide.pk %}">{{ slide.position }}</td>
-          <td data-url="{% url "pwd_front_admin:slider-update" pk=slide.pk %}">
+          <td data-url="{% url "dashboard:slider-update" pk=slide.pk %}">{{ slide.position }}</td>
+          <td data-url="{% url "dashboard:slider-update" pk=slide.pk %}">
             {% thumbnail slide.image "100x700" as im %}
               <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}">
             {% endthumbnail %}
           </td>
-          <td data-url="{% url "pwd_front_admin:slider-update" pk=slide.pk %}">
+          <td data-url="{% url "dashboard:slider-update" pk=slide.pk %}">
             <strong>{{ slide.title }}</strong></br>{{ slide.content }}
           </td>
           <td>
             <div class="form-check">
-              <form action="{% url "pwd_front_admin:slider-update" pk=slide.pk %}" method="post" id="check-{{ slide.pk }}">
+              <form action="{% url "dashboard:slider-update" pk=slide.pk %}" method="post" id="check-{{ slide.pk }}">
                 {% csrf_token %}
                 <input class="form-check-input position-static"{% if slide.is_active %} checked{% endif %}
                        type="checkbox" id="{{ slide.pk }}" name="is_active" aria-label="...">

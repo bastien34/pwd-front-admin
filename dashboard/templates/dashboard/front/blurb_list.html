@@ -12,7 +12,7 @@
         <h2>Blurbs</h2>
       </div>
       <div class="ml-auto py-2">
-        <a class="btn btn-sm btn-primary text-white" href="{% url "pwd_front_admin:blurb-create" %}"><i class="fa fa-plus-circle"></i>
+        <a class="btn btn-sm btn-primary text-white" href="{% url "dashboard:blurb-create" %}"><i class="fa fa-plus-circle"></i>
           {% trans "add a new blurb" %}</a>
       </div>
     </div>
@@ -29,7 +29,7 @@
 
       <tbody>
       {% for blurb in object_list %}
-        <tr data-url="{% url "pwd_front_admin:blurb-update" pk=blurb.pk %}">
+        <tr data-url="{% url "dashboard:blurb-update" pk=blurb.pk %}">
           <td><i class="la la-{{ blurb.la_icon }} icon-3x text-primary"></i></td>
           <td>
             <strong>{{ blurb.title }}</strong></br>{{ blurb.description }}

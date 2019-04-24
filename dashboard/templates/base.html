@@ -61,7 +61,7 @@
         <!--user menu-->
         <div class="header-block-flex order-1 mr-auto">
           <nav class="nav nav-sm header-block-flex">
-            {% if request.user.is_staff %}<a class="nav-link btn btn-sm btn-info" href="{% url "pwd_front_admin:site-admin" %}">Site admin</a>{% endif %}
+            {% if request.user.is_staff %}<a class="nav-link btn btn-sm btn-info" href="{% url "dashboard:index" %}">Site admin</a>{% endif %}
             {#          {% if request.user.is_authenticated %}#}
             {# URL provided by django-allauth/account/urls.py #}
             {#            <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>#}

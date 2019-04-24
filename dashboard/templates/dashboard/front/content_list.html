@@ -12,7 +12,7 @@
         <h2>{% trans "Contents" %}</h2>
       </div>
       <div class="ml-auto py-2">
-        <a class="btn btn-sm btn-primary text-white" href="{% url "pwd_front_admin:content-create" %}"><i class="fa fa-plus-circle"></i>
+        <a class="btn btn-sm btn-primary text-white" href="{% url "dashboard:content-create" %}"><i class="fa fa-plus-circle"></i>
           {% trans "add a new content" %}</a>
       </div>
     </div>
@@ -30,13 +30,13 @@
       <tbody>
       {% for content in object_list %}
         <tr>
-          <td data-url="{% url "pwd_front_admin:content-update" pk=content.pk %}">
+          <td data-url="{% url "dashboard:content-update" pk=content.pk %}">
             {{ content.name }}
           </td>
-          <td data-url="{% url "pwd_front_admin:content-update" pk=content.pk %}">{{ content.content | truncatewords_html:30 }}</td>
+          <td data-url="{% url "dashboard:content-update" pk=content.pk %}">{{ content.content | truncatewords_html:30 }}</td>
           <td>
             <div class="form-check">
-              <form action="{% url "pwd_front_admin:content-update" pk=content.pk %}" method="post" id="check-{{ slide.pk }}">
+              <form action="{% url "dashboard:content-update" pk=content.pk %}" method="post" id="check-{{ slide.pk }}">
                 {% csrf_token %}
                 <input class="form-check-input position-static"{% if content.is_active %} checked{% endif %}
                        type="checkbox" id="{{ slide.pk }}" name="is_active" aria-label="...">
