@@ -13,7 +13,7 @@ $.ajaxSetup({
     }
 });
 
-$(document).on('click', 'form', function () {
+$(document).on('click', '.form-check > form', function () {
     var url = $(this).attr("action");
     $.post(url, $(this).serializeArray());
 });
